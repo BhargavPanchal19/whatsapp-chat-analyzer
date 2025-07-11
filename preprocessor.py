@@ -31,7 +31,7 @@ def preprocess(data):
     messages = []
 
     for msg in df['user_message']:
-        entry = re.split('([\w\W]+?):\s', msg.strip(), maxsplit=1)
+        entry = re.split(r'([\w\W]+?):\s', msg.strip(), maxsplit=1)
         if len(entry) >= 3:
             users.append(entry[1])
             messages.append(entry[2])
